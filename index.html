@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ergofly — Sistema de IA em Ergonomia para empresas</title>
+  <meta name="description" content="A primeira plataforma de IA para SST e RH. Analise 100% dos seus colaboradores, identifique riscos invisíveis e tenha planos de ação automáticos." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              DEFAULT: '#9E1F5A',
+              dark: '#7A1746'
+            },
+            sage: {
+              DEFAULT: '#7DB5AC',
+              dark: '#5A8E86',
+              light: '#F4F9F8'
+            },
+            ink: '#1A1A1A',
+            muted: '#6B7280'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="font-sans text-ink antialiased">
+
+  <!-- ============================================
+       1. HERO
+       ============================================ -->
+  <section id="hero" class="hero-bg">
+
+    <!-- Top bar (logo only) -->
+    <header class="relative z-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex items-center">
+        <a href="#" class="flex items-center fade-in-up" aria-label="Doutor Fly">
+          <img src="assets/logo-doutor-fly.png" alt="Doutor Fly" class="h-10 w-auto" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero main -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-6 pb-14 lg:pt-10 lg:pb-20">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+        <!-- LEFT: text -->
+        <div class="lg:col-span-6 text-center lg:text-left">
+
+          <!-- Headline (3 linhas) -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-bold tracking-tight leading-[1.08] text-ink fade-in-up fade-in-up-delay-1">
+            66% da rotatividade vem de uma causa
+            <span class="bg-gradient-to-r from-wine via-wine to-wine-dark bg-clip-text text-transparent">silenciosa</span>
+            que ninguém vê.
+          </h1>
+
+          <!-- Subhead -->
+          <p class="mt-6 text-lg text-muted leading-relaxed max-w-xl mx-auto lg:mx-0 fade-in-up fade-in-up-delay-2">
+            Analise <span class="font-semibold text-ink">100% dos seus colaboradores</span> e receba planos de ação automáticos, mesmo sem experiência em ergonomia.
+          </p>
+
+          <!-- CTA -->
+          <div class="mt-8 flex justify-center lg:justify-start fade-in-up fade-in-up-delay-3">
+            <a href="#cta-final" data-cta="hero-primary" class="btn-primary group">
+              Quero ver o Ergofly
+              <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: VSL placeholder -->
+        <div class="lg:col-span-6 fade-in-up fade-in-up-delay-2">
+          <div class="relative">
+
+            <!-- VSL frame -->
+            <div class="vsl-frame relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-wine/10 border border-white/40">
+
+              <!-- Play button -->
+              <button
+                type="button"
+                aria-label="Assistir vídeo de apresentação"
+                class="absolute inset-0 flex items-center justify-center cursor-pointer group">
+                <span class="play-button relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 backdrop-blur flex items-center justify-center shadow-2xl">
+                  <svg class="w-7 h-7 lg:w-9 lg:h-9 text-wine ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </button>
+
+              <!-- Caption -->
+              <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                <div class="flex items-center gap-2 text-white/90">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2" />
+                  </svg>
+                  <span class="text-sm font-medium">Veja em 2 minutos como o Ergofly funciona</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Credibility cards (clean) -->
+    <div class="relative z-10 pb-14 lg:pb-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+
+          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-3">
+            <span class="cred-card-icon">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-2a4 4 0 100-8 4 4 0 000 8zM17 8a4 4 0 11-1.5 7.747" />
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <div class="text-base lg:text-lg font-bold text-ink leading-tight">+700</div>
+              <div class="text-xs lg:text-sm text-muted leading-tight">empresas atendidas</div>
+            </div>
+          </div>
+
+          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-3">
+            <span class="cred-card-icon">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <div class="text-base lg:text-lg font-bold text-ink leading-tight">Abergo</div>
+              <div class="text-xs lg:text-sm text-muted leading-tight">Associação Brasileira</div>
+            </div>
+          </div>
+
+          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-4">
+            <span class="cred-card-icon">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <div class="text-base lg:text-lg font-bold text-ink leading-tight">35 anos</div>
+              <div class="text-xs lg:text-sm text-muted leading-tight">PhD em ergonomia</div>
+            </div>
+          </div>
+
+          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-4">
+            <span class="cred-card-icon">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <div class="text-base lg:text-lg font-bold text-ink leading-tight">NR-1 / NR-17</div>
+              <div class="text-xs lg:text-sm text-muted leading-tight">Conformidade total</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================
+       2. NÚMEROS — light clean
+       ============================================ -->
+  <section id="numeros" class="section-bg py-20 lg:py-28">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Header da seção -->
+      <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
+        <div class="section-badge scroll-reveal">
+          <span class="dot"></span>
+          <span>Resultados</span>
+        </div>
+        <h2 class="section-title mt-5 scroll-reveal">
+          Por que o Ergofly funciona.
+        </h2>
+        <p class="section-subhead mt-4 scroll-reveal scroll-reveal-delay-1">
+          Cobertura, profundidade e tecnologia em cada análise.
+        </p>
+      </div>
+
+      <!-- Grid de 3 stat cards (light) -->
+      <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
+
+        <!-- Card 1 — 66% (rotatividade) -->
+        <div class="stat-card-light scroll-reveal scroll-reveal-delay-1">
+          <span class="stat-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M312.891,474.531c-53.614,14.02-110.427,7.746-159.971-17.673c-49.891-25.596-88.282-68.611-108.101-121.119c-18.354-48.63-19.542-100.392-3.436-149.692c11.942-36.555,33.142-69.509,60.999-95.462l-5.138,42.64l29.938,3.609l11.327-93.99l-92.81-10.973l-3.541,29.946l41.602,4.92c-32.521,29.685-57.238,67.702-71.039,109.947c-8.855,27.105-13.104,55.244-12.628,83.637c0.493,29.38,6.049,58.337,16.516,86.069c22.465,59.521,65.987,108.283,122.548,137.3c36.557,18.754,76.608,28.312,116.888,28.312c21.594,0,43.257-2.748,64.477-8.298L312.891,474.531z" />
+              <path fill="currentColor" d="M496.473,343.458c20.968-57.4,20.612-120.547-1-177.808C472.07,103.642,426.264,53.749,366.492,25.161C306.911-3.335,239.593-7.787,176.937,12.627l9.342,28.671c55.258-18.004,114.637-14.073,167.201,11.067c52.727,25.218,93.134,69.231,113.78,123.934c19.062,50.506,19.377,106.197,0.888,156.814c-14.621,40.026-40.207,74.946-73.408,100.816l5.589-46.375l-29.938-3.609l-11.328,93.99l92.809,10.974l3.541-29.946l-38.058-4.501C453.006,425.489,480.51,387.157,496.473,343.458z" />
+              <path fill="currentColor" d="M390.318,293.388c0-38.407-24.113-71.284-57.994-84.3c8.693-10.919,13.906-24.726,13.906-39.735c0-35.245-28.674-63.918-63.919-63.918c-32.365,0-59.171,24.185-63.338,55.428c-31.243,4.167-55.428,30.973-55.428,63.338c0,15.228,5.362,29.223,14.284,40.215c-33.232,13.332-56.763,45.877-56.763,83.819v15.077h213.026v-15.077c0-14.24-3.319-27.717-9.216-39.707l65.442-0.083V293.388z M282.312,135.59c18.617,0,33.764,15.146,33.764,33.763c0,16.801-12.337,30.772-28.427,33.338c-6.441-17.967-20.707-32.233-38.675-38.674C251.54,147.927,265.511,135.59,282.312,135.59z M227.465,190.438c18.617,0,33.764,15.147,33.764,33.764c0,18.618-15.147,33.764-33.764,33.764c-18.618,0-33.764-15.147-33.764-33.764C193.7,205.585,208.847,190.438,227.465,190.438z M153.135,333.159c6.708-25.874,30.259-45.038,58.202-45.038h32.485c27.942,0,51.493,19.164,58.202,45.038H153.135z M300.961,278.405c-7.114-5.832-15.131-10.599-23.806-14.059c7.087-8.756,11.909-19.411,13.574-31.073h9.32c27.95,0,51.507,19.174,58.207,45.059L300.961,278.405z" />
+            </svg>
+          </span>
+          <div class="stat-number-light">66%</div>
+          <p class="stat-card-text">
+            da rotatividade vem de
+            <strong>causas ergonômicas</strong>
+          </p>
+        </div>
+
+        <!-- Card 2 — 100% (sem amostragem) -->
+        <div class="stat-card-light scroll-reveal scroll-reveal-delay-2">
+          <span class="stat-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="m11 59.12c4.63 3.3 12.84 4.8 20.91 4.8a52.17 52.17 0 0 0 15.66-2.18h.62a13.57 13.57 0 0 0 8.13-2.7l4.29 4.29a2 2 0 0 0 2.83-2.83l-4.29-4.29a13.63 13.63 0 0 0 -9.87-21.71 24.79 24.79 0 0 0 -7.85-5.13 16.19 16.19 0 1 0 -18.86 0 24.92 24.92 0 0 0 -15.5 23.07c0 1.78.68 4.39 3.93 6.68zm46.86-11a9.68 9.68 0 0 1 -9.67 9.66h-.72-.07a9.66 9.66 0 1 1 10.46-9.62zm-38-31.86a12.19 12.19 0 1 1 12.14 12.17 12.21 12.21 0 0 1 -12.19-12.18zm8.14 15.65a16.17 16.17 0 0 0 4 .52 15.79 15.79 0 0 0 4-.53 20.84 20.84 0 0 1 7.77 3.27 13.65 13.65 0 0 0 -3.39 24.17c-9.82 1.54-21.94.2-27.11-3.48-1.5-1.06-2.23-2.18-2.23-3.42a20.9 20.9 0 0 1 16.96-20.53z" />
+            </svg>
+          </span>
+          <div class="stat-number-light">100%</div>
+          <p class="stat-card-text">
+            dos seus colaboradores analisados,
+            <strong>sem amostragem</strong>
+          </p>
+        </div>
+
+        <!-- Card 3 — 5 (agentes IA) -->
+        <div class="stat-card-light scroll-reveal scroll-reveal-delay-3">
+          <span class="stat-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="m421 279.881h-53v43.119h119.593c15.459-18.357 24.407-41.896 24.407-67 0-37.184-19.608-70.951-50.974-89.497 3.684-14.831 2.284-30.568-4.236-44.847-6.972-15.266-19.055-27.199-34.021-33.934-1.521-21.881-10.502-42.31-25.884-58.443-18.002-18.881-42.288-29.279-68.385-29.279-20.75 0-40.473 6.846-56.5 18.793v99.207h47v-21c0-8.284 6.716-15 15-15s15 6.716 15 15v21h3c8.284 0 15 6.716 15 15s-6.716 15-15 15h-80c-16.542 0-30-13.458-30-30v-97.675c-16.371-12.893-36.878-20.325-58.5-20.325-26.097 0-50.383 10.398-68.385 29.28-15.382 16.133-24.363 36.561-25.884 58.443-14.967 6.735-27.05 18.668-34.021 33.934-5.158 11.295-7.098 23.501-5.866 35.45h97.657v-40.107c0-8.284 6.716-15 15-15s15 6.716 15 15v40.106h8.999c16.542 0 30 13.458 30 30v16h14.617c8.284 0 15 6.716 15 15s-6.716 15-15 15h-14.617v27c0 8.284-6.716 15-15 15s-15-6.716-15-15v-73h-56.001v45c0 8.284-6.716 15-15 15s-15-6.716-15-15v-45s-73.249-.049-73.849-.122c-16.528 18.633-26.15 42.983-26.15 69.016 0 37.184 19.608 70.951 50.974 89.497-3.684 14.831-2.284 30.568 4.236 44.847 1.395 3.055 3.004 5.97 4.791 8.743h95.999v-67.087h-26c-8.284 0-15-6.716-15-15s6.716-15 15-15h26c16.542 0 30 13.458 30 30v18.544h13c8.284 0 15 6.716 15 15s-6.716 15-15 15h-13v18.543c0 16.542-13.458 30-30 30h-66.299c2.422 20.056 11.166 38.689 25.414 53.633 18.002 18.882 42.288 29.28 68.385 29.28 21.182 0 41.298-7.129 57.5-19.542v-77.458c0-16.542 13.458-30 30-30h27c8.284 0 15 6.716 15 15s-6.716 15-15 15h-27v77.458c16.202 12.413 36.318 19.542 57.5 19.542 26.097 0 50.383-10.398 68.385-29.28 15.382-16.133 24.363-36.562 25.884-58.443 14.967-6.735 27.05-18.668 34.021-33.934 5.431-11.892 7.296-24.795 5.644-37.344h-191.438c-16.542 0-30-13.458-30-30v-26.999c0-8.284 6.716-15 15-15s15 6.716 15 15v27h67.004v-99.118h-30c-8.284 0-15-6.716-15-15s6.716-15 15-15h30c16.542 0 30 13.458 30 30v26h37.999v-28.882c0-8.284 6.716-15 15-15s15 6.716 15 15c0 0 .001 42.695.001 43.881 0 8.285-6.716 15-15 15z" />
+            </svg>
+          </span>
+          <div class="stat-number-light">5</div>
+          <p class="stat-card-text">
+            <strong>agentes de IA</strong>
+            especialistas em cada laudo
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. COMO FUNCIONA — CARDS COM MOCKUP
+       ============================================ -->
+  <section id="como-funciona" class="section-bg-soft py-20 lg:py-28">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Header da seção -->
+      <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
+        <div class="section-badge scroll-reveal">
+          <span class="dot"></span>
+          <span>Processo</span>
+        </div>
+        <h2 class="section-title mt-5 scroll-reveal">
+          Como funciona, em 3 passos.
+        </h2>
+        <p class="section-subhead mt-4 scroll-reveal scroll-reveal-delay-1">
+          Do cadastro à entrega dos laudos, sem precisar entender de ergonomia.
+        </p>
+      </div>
+
+      <!-- Grid de 3 step cards premium (com mockup) -->
+      <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
+
+        <!-- Step 1: Mockup de app/questionário -->
+        <div class="step-card-premium scroll-reveal scroll-reveal-delay-1">
+          <div class="step-mockup">
+            <svg class="step-mockup-svg" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Phone/app card -->
+              <rect x="50" y="14" width="180" height="152" rx="18" fill="white" stroke="rgba(15,23,42,0.08)" />
+              <!-- Top bar: avatar + name -->
+              <circle cx="74" cy="38" r="11" fill="url(#step1-avatar)" />
+              <rect x="92" y="33" width="64" height="5" rx="2.5" fill="rgba(15,23,42,0.75)" />
+              <rect x="92" y="42" width="44" height="3.5" rx="1.75" fill="rgba(15,23,42,0.3)" />
+              <!-- Status pill -->
+              <rect x="186" y="32" width="36" height="14" rx="7" fill="rgba(125,181,172,0.15)" />
+              <text x="204" y="42" font-family="Inter" font-size="7" font-weight="600" fill="#5A8E86" text-anchor="middle">Online</text>
+              <!-- Divider -->
+              <line x1="64" y1="62" x2="216" y2="62" stroke="rgba(15,23,42,0.06)" stroke-width="1" />
+              <!-- Question -->
+              <rect x="64" y="76" width="140" height="5" rx="2.5" fill="rgba(15,23,42,0.85)" />
+              <rect x="64" y="86" width="100" height="4" rx="2" fill="rgba(15,23,42,0.4)" />
+              <!-- Options -->
+              <circle cx="72" cy="108" r="5.5" fill="none" stroke="rgba(15,23,42,0.2)" stroke-width="1.5" />
+              <rect x="86" y="105" width="78" height="4.5" rx="2.25" fill="rgba(15,23,42,0.35)" />
+              <circle cx="72" cy="128" r="5.5" fill="#7DB5AC" />
+              <circle cx="72" cy="128" r="2.5" fill="white" />
+              <rect x="86" y="125" width="58" height="4.5" rx="2.25" fill="rgba(15,23,42,0.7)" />
+              <circle cx="72" cy="148" r="5.5" fill="none" stroke="rgba(15,23,42,0.2)" stroke-width="1.5" />
+              <rect x="86" y="145" width="86" height="4.5" rx="2.25" fill="rgba(15,23,42,0.35)" />
+
+              <defs>
+                <linearGradient id="step1-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#9DCBC3" />
+                  <stop offset="100%" stop-color="#5A8E86" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="step-meta">
+            <div class="step-number-pill">PASSO 01</div>
+            <h3 class="text-xl font-bold text-ink mb-3 leading-tight">
+              Cadastre sua equipe
+            </h3>
+            <p class="text-base text-muted leading-relaxed">
+              Sobe a lista de colaboradores e cada um responde um questionário rápido pelo app. Leva poucos minutos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2: Mockup de IA processando dados -->
+        <div class="step-card-premium scroll-reveal scroll-reveal-delay-2">
+          <div class="step-mockup">
+            <svg class="step-mockup-svg" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Card -->
+              <rect x="40" y="14" width="200" height="152" rx="18" fill="white" stroke="rgba(15,23,42,0.08)" />
+              <!-- Header -->
+              <rect x="54" y="30" width="80" height="5" rx="2.5" fill="rgba(15,23,42,0.8)" />
+              <rect x="54" y="40" width="56" height="3.5" rx="1.75" fill="rgba(15,23,42,0.35)" />
+              <!-- "Processing" badge -->
+              <rect x="180" y="28" width="50" height="16" rx="8" fill="rgba(158,31,90,0.12)" />
+              <circle cx="190" cy="36" r="2.5" fill="#9E1F5A" />
+              <text x="220" y="40" font-family="Inter" font-size="7" font-weight="600" fill="#9E1F5A" text-anchor="end">Analisando</text>
+              <!-- Grid de dots (data points) -->
+              <g>
+                <!-- Row 1 -->
+                <circle cx="60" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="74" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="88" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="102" cy="64" r="3.5" fill="#9E1F5A" />
+                <circle cx="116" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="130" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="144" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="158" cy="64" r="3.5" fill="#9E1F5A" />
+                <circle cx="172" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="186" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="200" cy="64" r="3.5" fill="#7DB5AC" />
+                <circle cx="214" cy="64" r="3.5" fill="#7DB5AC" />
+                <!-- Row 2 -->
+                <circle cx="60" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="74" cy="78" r="3.5" fill="#9E1F5A" />
+                <circle cx="88" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="102" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="116" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="130" cy="78" r="3.5" fill="#9E1F5A" />
+                <circle cx="144" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="158" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="172" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="186" cy="78" r="3.5" fill="#7DB5AC" />
+                <circle cx="200" cy="78" r="3.5" fill="#9E1F5A" />
+                <circle cx="214" cy="78" r="3.5" fill="#7DB5AC" />
+                <!-- Row 3 -->
+                <circle cx="60" cy="92" r="3.5" fill="#9E1F5A" />
+                <circle cx="74" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="88" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="102" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="116" cy="92" r="3.5" fill="#9E1F5A" />
+                <circle cx="130" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="144" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="158" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="172" cy="92" r="3.5" fill="#9E1F5A" />
+                <circle cx="186" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="200" cy="92" r="3.5" fill="#7DB5AC" />
+                <circle cx="214" cy="92" r="3.5" fill="#7DB5AC" />
+              </g>
+              <!-- Mini chart bars -->
+              <line x1="54" y1="148" x2="226" y2="148" stroke="rgba(15,23,42,0.1)" stroke-width="1" />
+              <rect x="60" y="128" width="8" height="20" rx="2" fill="rgba(125,181,172,0.4)" />
+              <rect x="76" y="118" width="8" height="30" rx="2" fill="rgba(125,181,172,0.6)" />
+              <rect x="92" y="108" width="8" height="40" rx="2" fill="rgba(125,181,172,0.85)" />
+              <rect x="108" y="100" width="8" height="48" rx="2" fill="#7DB5AC" />
+              <rect x="124" y="108" width="8" height="40" rx="2" fill="rgba(158,31,90,0.7)" />
+              <rect x="140" y="116" width="8" height="32" rx="2" fill="rgba(158,31,90,0.55)" />
+              <rect x="156" y="124" width="8" height="24" rx="2" fill="rgba(158,31,90,0.4)" />
+              <rect x="172" y="132" width="8" height="16" rx="2" fill="rgba(158,31,90,0.3)" />
+              <rect x="188" y="124" width="8" height="24" rx="2" fill="rgba(125,181,172,0.4)" />
+              <rect x="204" y="116" width="8" height="32" rx="2" fill="rgba(125,181,172,0.5)" />
+            </svg>
+          </div>
+          <div class="step-meta">
+            <div class="step-number-pill">PASSO 02</div>
+            <h3 class="text-xl font-bold text-ink mb-3 leading-tight">
+              A IA analisa tudo
+            </h3>
+            <p class="text-base text-muted leading-relaxed">
+              Cinco agentes de IA especializados avaliam 100% dos postos em minutos. Identificam riscos que olho humano não vê.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: Mockup de laudo/relatório pronto -->
+        <div class="step-card-premium scroll-reveal scroll-reveal-delay-3">
+          <div class="step-mockup">
+            <svg class="step-mockup-svg" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Document card -->
+              <rect x="50" y="14" width="180" height="152" rx="18" fill="white" stroke="rgba(15,23,42,0.08)" />
+              <!-- Header -->
+              <rect x="66" y="28" width="80" height="5" rx="2.5" fill="rgba(15,23,42,0.85)" />
+              <rect x="66" y="38" width="50" height="3.5" rx="1.75" fill="rgba(15,23,42,0.35)" />
+              <!-- "Pronto" status pill -->
+              <rect x="170" y="26" width="44" height="16" rx="8" fill="rgba(125,181,172,0.18)" />
+              <circle cx="180" cy="34" r="2.5" fill="#5A8E86" />
+              <text x="208" y="38" font-family="Inter" font-size="7" font-weight="600" fill="#5A8E86" text-anchor="end">Pronto</text>
+              <!-- Divider -->
+              <line x1="66" y1="56" x2="214" y2="56" stroke="rgba(15,23,42,0.06)" stroke-width="1" />
+              <!-- Checklist items -->
+              <g>
+                <circle cx="74" cy="74" r="6" fill="#7DB5AC" />
+                <path d="M71 74 L73.5 76.5 L77.5 72" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <rect x="88" y="71" width="60" height="4" rx="2" fill="rgba(15,23,42,0.7)" />
+                <rect x="88" y="79" width="86" height="3" rx="1.5" fill="rgba(15,23,42,0.3)" />
+              </g>
+              <g>
+                <circle cx="74" cy="98" r="6" fill="#7DB5AC" />
+                <path d="M71 98 L73.5 100.5 L77.5 96" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <rect x="88" y="95" width="70" height="4" rx="2" fill="rgba(15,23,42,0.7)" />
+                <rect x="88" y="103" width="78" height="3" rx="1.5" fill="rgba(15,23,42,0.3)" />
+              </g>
+              <g>
+                <circle cx="74" cy="122" r="6" fill="#7DB5AC" />
+                <path d="M71 122 L73.5 124.5 L77.5 120" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <rect x="88" y="119" width="56" height="4" rx="2" fill="rgba(15,23,42,0.7)" />
+                <rect x="88" y="127" width="92" height="3" rx="1.5" fill="rgba(15,23,42,0.3)" />
+              </g>
+              <!-- Bottom badges (NR-1 / NR-17) -->
+              <rect x="66" y="144" width="48" height="14" rx="7" fill="rgba(125,181,172,0.12)" stroke="rgba(125,181,172,0.3)" />
+              <text x="90" y="153" font-family="Inter" font-size="6.5" font-weight="600" fill="#5A8E86" text-anchor="middle">NR-1 OK</text>
+              <rect x="120" y="144" width="48" height="14" rx="7" fill="rgba(158,31,90,0.1)" stroke="rgba(158,31,90,0.3)" />
+              <text x="144" y="153" font-family="Inter" font-size="6.5" font-weight="600" fill="#9E1F5A" text-anchor="middle">NR-17 OK</text>
+            </svg>
+          </div>
+          <div class="step-meta">
+            <div class="step-number-pill">PASSO 03</div>
+            <h3 class="text-xl font-bold text-ink mb-3 leading-tight">
+              Receba o plano pronto
+            </h3>
+            <p class="text-base text-muted leading-relaxed">
+              Laudos NR-1 e NR-17, plano de ação priorizado e documentação jurídica. Tudo gerado automaticamente.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA secundário -->
+      <div class="mt-14 flex justify-center scroll-reveal scroll-reveal-delay-4">
+        <a href="#cta-final" data-cta="como-funciona-secondary" class="btn-primary group">
+          Quero ver o Ergofly
+          <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       3.5. FAQ
+       ============================================ -->
+  <section id="faq" class="section-bg py-20 lg:py-28">
+
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+
+      <!-- Header da seção -->
+      <div class="text-center mb-12 lg:mb-16">
+        <div class="section-badge scroll-reveal">
+          <span class="dot"></span>
+          <span>Dúvidas</span>
+        </div>
+        <h2 class="section-title mt-5 scroll-reveal">
+          Perguntas frequentes.
+        </h2>
+      </div>
+
+      <!-- Accordion -->
+      <div class="space-y-3">
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-1" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>O que é o Ergofly?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              O Ergofly é um <strong>sistema completo de IA em ergonomia</strong> da Doutor Fly. Ele analisa 100% dos seus colaboradores, identifica riscos ergonômicos e entrega laudos e planos de ação em conformidade com a NR-1 e a NR-17.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-1" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Como meus colaboradores participam?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Cada colaborador responde um <strong>questionário rápido pelo App Ergofly</strong>, no próprio celular. Não é preciso consultor visitando posto a posto: toda a coleta é digital, e a IA processa as respostas em minutos.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-2" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Preciso ter conhecimento de ergonomia pra usar?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Não. O Ergofly foi desenhado para o <strong>gestor de RH ou SST sem experiência prévia</strong> em ergonomia. A IA traduz os dados em plano de ação claro, e a documentação jurídica fica pronta automaticamente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-2" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Quais documentos o sistema gera?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              O Ergofly entrega <strong>laudos AEP e AET</strong>, plano de ação priorizado por risco e documentação jurídica completa em conformidade com a NR-1 e a NR-17.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-3" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Quem está por trás do Ergofly?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              O Ergofly é um produto da <strong>Doutor Fly</strong>, criado por um PhD com 35 anos de experiência em ergonomia. A metodologia é <strong>reconhecida pela Abergo</strong> (Associação Brasileira de Ergonomia) e já foi aplicada em mais de 700 empresas.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-reveal scroll-reveal-delay-3" data-open="false">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Em quanto tempo recebo o resultado?</span>
+            <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Depois que os colaboradores respondem o questionário, a <strong>análise é gerada em minutos</strong>. Cinco agentes de IA especializados (análise crítica, técnica, correlação, plano de ação e jurídica) processam os dados em paralelo.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. CTA FINAL
+       ============================================ -->
+  <section id="cta-final" class="section-bg py-20 lg:py-28">
+
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+      <div class="cta-final-card scroll-reveal">
+
+        <div class="section-badge">
+          <span class="dot"></span>
+          <span>Próximo passo</span>
+        </div>
+
+        <h2 class="section-title mt-5">
+          Pronto pra ver o Ergofly na sua empresa?
+        </h2>
+
+        <p class="section-subhead mt-5 max-w-xl mx-auto">
+          Agende uma demonstração focada no seu caso. Nosso time entra em contato em até 24h.
+        </p>
+
+        <div class="mt-9 flex justify-center">
+          <a href="#" data-cta="final" class="btn-primary group">
+            Quero ver o Ergofly
+            <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-7 text-sm text-muted">
+          <span class="font-semibold text-ink">+700 empresas</span>
+          <span class="mx-2 opacity-40">·</span>
+          <span class="font-semibold text-ink">Reconhecido pela Abergo</span>
+          <span class="mx-2 opacity-40">·</span>
+          <span class="font-semibold text-ink">NR-1 e NR-17</span>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. FOOTER
+       ============================================ -->
+  <footer id="footer" class="site-footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-14">
+
+      <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
+
+        <div>
+          <img src="assets/logo-doutor-fly.png" alt="Doutor Fly" class="h-10 w-auto" />
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm">
+          <a href="#" class="footer-link">Política de Privacidade</a>
+          <a href="mailto:contato@doutorfly.com.br" class="footer-link">contato@doutorfly.com.br</a>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-gray-200/60 text-center lg:text-left">
+        <p class="text-xs text-muted">
+          Doutor Fly
+          <span class="mx-1 opacity-40">·</span>
+          CNPJ XX.XXX.XXX/0001-XX
+          <span class="mx-1 opacity-40">·</span>
+          © 2026 Todos os direitos reservados
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
