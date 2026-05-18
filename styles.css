@@ -1,0 +1,850 @@
+/* ============================================
+   Ergofly LP — Premium Tech Direction
+   Mix clean light + dark featured section + mockup cards
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #FFFFFF;
+}
+
+:focus-visible {
+  outline: 2px solid #7DB5AC;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Animações
+   ============================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(125, 181, 172, 0.45);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 6px rgba(125, 181, 172, 0);
+  }
+}
+
+@keyframes featuredGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 60px rgba(158, 31, 90, 0.35),
+      0 0 100px rgba(158, 31, 90, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(158, 31, 90, 0.45),
+      0 0 130px rgba(158, 31, 90, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.fade-in-up-delay-1 { animation-delay: 0.08s; }
+.fade-in-up-delay-2 { animation-delay: 0.16s; }
+.fade-in-up-delay-3 { animation-delay: 0.24s; }
+.fade-in-up-delay-4 { animation-delay: 0.32s; }
+.fade-in-up-delay-5 { animation-delay: 0.40s; }
+
+.dot-pulse {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-delay-1 { transition-delay: 0.08s; }
+.scroll-reveal-delay-2 { transition-delay: 0.16s; }
+.scroll-reveal-delay-3 { transition-delay: 0.24s; }
+.scroll-reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ============================================
+   Hero — fundo suave com wash sage+wine + dot grid
+   ============================================ */
+
+.hero-bg {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 75% 20%, rgba(158, 31, 90, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 20% 30%, rgba(125, 181, 172, 0.12) 0%, transparent 65%),
+    #FFFFFF;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 26, 26, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   Section badge (pill pequeno acima dos títulos)
+   ============================================ */
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(125, 181, 172, 0.10);
+  border: 1px solid rgba(125, 181, 172, 0.25);
+  color: #5A8E86;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.section-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #7DB5AC;
+}
+
+/* Variante dark do badge */
+.section-badge-dark {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-badge-dark .dot {
+  background: #7DB5AC;
+  box-shadow: 0 0 10px rgba(125, 181, 172, 0.7);
+}
+
+/* ============================================
+   Section title
+   ============================================ */
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #1A1A1A;
+}
+
+.section-title-dark {
+  color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .section-title { font-size: 2.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .section-title { font-size: 2.875rem; }
+}
+
+.section-subhead {
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.65;
+}
+
+.section-subhead-dark {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 768px) {
+  .section-subhead { font-size: 1.0625rem; }
+}
+
+/* ============================================
+   Botão CTA — clean flat wine
+   ============================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: #9E1F5A;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(158, 31, 90, 0.22);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 1024px) {
+  .btn-primary {
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+}
+
+.btn-primary:hover {
+  background: #7A1746;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(158, 31, 90, 0.32);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary .arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Botão secundário (outline) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(125, 181, 172, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* ============================================
+   Glass pill (badge pre-headline)
+   ============================================ */
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(125, 181, 172, 0.35);
+}
+
+/* ============================================
+   Cred cards (Hero — embaixo) — clean solid
+   ============================================ */
+
+.cred-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cred-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(125, 181, 172, 0.45);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.cred-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(125, 181, 172, 0.18) 0%, rgba(158, 31, 90, 0.08) 100%);
+  color: #5A8E86;
+}
+
+/* ============================================
+   Stat cards LIGHT (Seção 2 — Números, versão light)
+   ============================================ */
+
+.stat-card-light {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #FAFAFB;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 20px;
+  padding: 40px 28px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.stat-card-light:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 181, 172, 0.45);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.stat-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(125, 181, 172, 0.18) 0%, rgba(158, 31, 90, 0.08) 100%);
+  color: #5A8E86;
+  margin-bottom: 20px;
+}
+
+.stat-card-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.stat-number-light {
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #9E1F5A 0%, #7A1746 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .stat-number-light { font-size: 4.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .stat-number-light { font-size: 5rem; }
+}
+
+.stat-card-text {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.55;
+}
+
+.stat-card-text strong {
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+/* ============================================
+   DARK SECTION (Seção 2 — Números)
+   Estilo Ref 1: fundo escuro premium + featured card glow
+   ============================================ */
+
+.dark-section {
+  position: relative;
+  background: linear-gradient(180deg, #0B0512 0%, #160B1A 100%);
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* Dot grid sutil em branco (visível só na parte escura central) */
+.dark-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 75% 50% at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 50% at 50% 50%, black 20%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow central wine no fundo */
+.dark-section-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(158, 31, 90, 0.28) 0%, transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark-section-glow-sage {
+  position: absolute;
+  bottom: -10%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(125, 181, 172, 0.18) 0%, transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark card (regular) — centralizado vertical e horizontal */
+.dark-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  pointer-events: none;
+}
+
+.dark-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-3px);
+}
+
+/* Dark card FEATURED (center one — alinhado com os outros, glow vinho) */
+.dark-card-featured {
+  position: relative;
+  background:
+    radial-gradient(ellipse at center top, rgba(192, 71, 129, 0.4) 0%, rgba(122, 23, 70, 0.25) 45%, rgba(26, 11, 30, 0.6) 100%),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(192, 71, 129, 0.35);
+  animation: featuredGlow 5s ease-in-out infinite;
+}
+
+.dark-card-featured:hover {
+  transform: translateY(-3px);
+}
+
+/* Featured top badge */
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+.featured-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* Dark card icon — wrapper com bg + suporte pra SVG custom dentro */
+.dark-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(125, 181, 172, 0.12);
+  border: 1px solid rgba(125, 181, 172, 0.22);
+  color: #9DCBC3;
+  margin-bottom: 24px;
+}
+
+.dark-card-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.dark-card-featured .dark-card-icon {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Dark number */
+.dark-number {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.55) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .dark-number {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dark-number {
+    font-size: 5rem;
+  }
+}
+
+/* Featured number — branco puro com glow */
+.dark-card-featured .dark-number {
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
+  background: none;
+  text-shadow: 0 0 32px rgba(255, 255, 255, 0.35);
+}
+
+/* Dark card text */
+.dark-card-text {
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 18px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.dark-card-text strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.dark-card-featured .dark-card-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+   Step cards premium (Seção 3 — mockups)
+   Estilo Ref 2: cards com mockup ilustrativo
+   ============================================ */
+
+.step-card-premium {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.step-card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+  border-color: rgba(125, 181, 172, 0.4);
+}
+
+.step-mockup {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #F4F9F8 0%, #FDF5F8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.step-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 26, 26, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.step-mockup-svg {
+  position: relative;
+  z-index: 1;
+  max-width: 85%;
+  max-height: 85%;
+  filter: drop-shadow(0 12px 28px rgba(15, 23, 42, 0.12));
+}
+
+.step-meta {
+  padding: 28px 28px 30px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(125, 181, 172, 0.12);
+  border: 1px solid rgba(125, 181, 172, 0.25);
+  color: #5A8E86;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   FAQ accordion — clean
+   ============================================ */
+
+.faq-item {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item[data-open="true"] {
+  border-color: rgba(158, 31, 90, 0.25);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .faq-trigger {
+    padding: 24px 28px;
+    font-size: 1.0625rem;
+  }
+}
+
+.faq-trigger:hover { color: #9E1F5A; }
+
+.faq-chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #7DB5AC;
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.faq-item[data-open="true"] .faq-chevron {
+  transform: rotate(180deg);
+  color: #9E1F5A;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-content-inner {
+  padding: 0 24px 22px 24px;
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.65;
+}
+
+@media (min-width: 1024px) {
+  .faq-content-inner {
+    padding: 0 28px 24px 28px;
+    font-size: 1rem;
+  }
+}
+
+.faq-content-inner strong {
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+/* ============================================
+   CTA Final card — clean com wash suave
+   ============================================ */
+
+.cta-final-card {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(158, 31, 90, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(125, 181, 172, 0.12) 0%, transparent 65%),
+    #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 28px;
+  padding: 48px 28px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+@media (min-width: 768px) {
+  .cta-final-card {
+    padding: 72px 48px;
+  }
+}
+
+/* ============================================
+   VSL placeholder (Hero — direita)
+   ============================================ */
+
+.vsl-frame {
+  position: relative;
+  background: linear-gradient(135deg, #1A1A2E 0%, #2D1B36 50%, #1F2C2A 100%);
+}
+
+.vsl-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(158, 31, 90, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(125, 181, 172, 0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.play-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 50px -10px rgba(158, 31, 90, 0.4);
+}
+
+/* ============================================
+   Section background (Seções light)
+   ============================================ */
+
+.section-bg {
+  position: relative;
+  background: #FFFFFF;
+}
+
+.section-bg-soft {
+  position: relative;
+  background: #FFFFFF;
+  z-index: 2;
+}
+
+.section-bg {
+  position: relative;
+  background: #FFFFFF;
+  z-index: 2;
+}
+
+.hero-bg {
+  position: relative;
+  z-index: 2;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.site-footer {
+  background: #FAFBFC;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.footer-link {
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #9E1F5A;
+}
+
+/* ============================================
+   Scroll Darken Veil
+   Overlay fixo que cobre o viewport e fade in/out
+   conforme a Seção 2 entra/sai do viewport.
+   ============================================ */
+
+.scroll-darken-veil {
+  position: fixed;
+  inset: 0;
+  background: #0B0512;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+  will-change: opacity;
+  transition: opacity 0.15s linear;
+}
+
+/* Conteúdo das seções precisa ficar acima do veil */
+.dark-section > * {
+  position: relative;
+  z-index: 10;
+}
