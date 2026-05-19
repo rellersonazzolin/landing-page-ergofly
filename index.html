@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ergofly — Sistema de IA em Ergonomia para empresas</title>
+  <title>Ergofly — Plataforma de IA em Ergonomia para empresas</title>
   <meta name="description" content="A primeira plataforma de IA para SST e RH. Analise 100% dos seus colaboradores, identifique riscos invisíveis e tenha planos de ação automáticos." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,7 +64,8 @@
 
           <!-- Headline (3 linhas) -->
           <h1 class="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-bold tracking-tight leading-[1.08] text-ink fade-in-up fade-in-up-delay-1">
-            66% da rotatividade vem de uma causa
+            <span data-counter-to="66" data-counter-suffix="%" data-counter-delay="350" class="headline-counter">0%</span>
+            da rotatividade vem de uma causa
             <span class="bg-gradient-to-r from-wine via-wine to-wine-dark bg-clip-text text-transparent">silenciosa</span>
             que ninguém vê.
           </h1>
@@ -77,7 +78,7 @@
           <!-- CTA -->
           <div class="mt-8 flex justify-center lg:justify-start fade-in-up fade-in-up-delay-3">
             <a href="#cta-final" data-cta="hero-primary" class="btn-primary group">
-              Quero ver o Ergofly
+              Quero ver a Ergofly
               <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -90,14 +91,105 @@
         <div class="lg:col-span-6 fade-in-up fade-in-up-delay-2">
           <div class="relative">
 
-            <!-- VSL frame -->
+            <!-- VSL frame com mock de dashboard por trás -->
             <div class="vsl-frame relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-wine/10 border border-white/40">
+
+              <!-- Mock de dashboard (background) -->
+              <svg class="vsl-dashboard-mock" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <!-- Bg -->
+                <rect width="800" height="450" fill="#0F0918"/>
+                <!-- Glow vinho canto sup esq -->
+                <ellipse cx="100" cy="80" rx="220" ry="160" fill="#9E1F5A" opacity="0.35"/>
+                <ellipse cx="700" cy="380" rx="200" ry="150" fill="#7DB5AC" opacity="0.18"/>
+
+                <!-- Janela principal (dashboard card) -->
+                <rect x="48" y="40" width="704" height="370" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+
+                <!-- Header da janela -->
+                <circle cx="72" cy="68" r="5" fill="#FF6B6B" opacity="0.7"/>
+                <circle cx="90" cy="68" r="5" fill="#FFB347" opacity="0.7"/>
+                <circle cx="108" cy="68" r="5" fill="#7DB5AC" opacity="0.7"/>
+                <rect x="320" y="62" width="160" height="12" rx="6" fill="rgba(255,255,255,0.12)"/>
+
+                <!-- Sidebar à esquerda -->
+                <rect x="72" y="100" width="180" height="290" rx="10" fill="rgba(255,255,255,0.04)"/>
+                <rect x="88" y="120" width="120" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+                <rect x="88" y="138" width="80" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
+
+                <!-- Sidebar items -->
+                <rect x="84" y="166" width="156" height="32" rx="8" fill="rgba(158,31,90,0.25)"/>
+                <circle cx="100" cy="182" r="6" fill="#9E1F5A"/>
+                <rect x="116" y="178" width="90" height="6" rx="3" fill="rgba(255,255,255,0.85)"/>
+
+                <rect x="100" y="216" width="6" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                <rect x="116" y="215" width="80" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+
+                <rect x="100" y="240" width="6" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                <rect x="116" y="239" width="100" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+
+                <rect x="100" y="264" width="6" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                <rect x="116" y="263" width="70" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+
+                <rect x="100" y="288" width="6" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                <rect x="116" y="287" width="90" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+
+                <!-- Painel principal: header -->
+                <rect x="276" y="120" width="200" height="10" rx="5" fill="rgba(255,255,255,0.85)"/>
+                <rect x="276" y="140" width="120" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+
+                <!-- Status pill "Análise concluída" -->
+                <rect x="608" y="116" width="124" height="22" rx="11" fill="rgba(125,181,172,0.2)" stroke="rgba(125,181,172,0.4)"/>
+                <circle cx="624" cy="127" r="3.5" fill="#7DB5AC"/>
+                <rect x="635" y="123" width="86" height="8" rx="2" fill="#9DCBC3"/>
+
+                <!-- 3 KPI cards -->
+                <g>
+                  <rect x="276" y="170" width="148" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="290" y="184" width="50" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                  <text x="290" y="222" font-family="Inter" font-size="24" font-weight="700" fill="#FFFFFF">66%</text>
+                  <rect x="290" y="232" width="80" height="5" rx="2.5" fill="rgba(255,255,255,0.3)"/>
+                </g>
+                <g>
+                  <rect x="436" y="170" width="148" height="80" rx="10" fill="rgba(158,31,90,0.18)" stroke="rgba(158,31,90,0.4)"/>
+                  <rect x="450" y="184" width="50" height="6" rx="3" fill="rgba(255,255,255,0.55)"/>
+                  <text x="450" y="222" font-family="Inter" font-size="24" font-weight="700" fill="#FFFFFF">100%</text>
+                  <rect x="450" y="232" width="76" height="5" rx="2.5" fill="rgba(255,255,255,0.55)"/>
+                </g>
+                <g>
+                  <rect x="596" y="170" width="148" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="610" y="184" width="50" height="6" rx="3" fill="rgba(255,255,255,0.35)"/>
+                  <text x="610" y="222" font-family="Inter" font-size="24" font-weight="700" fill="#FFFFFF">5</text>
+                  <rect x="610" y="232" width="70" height="5" rx="2.5" fill="rgba(255,255,255,0.3)"/>
+                </g>
+
+                <!-- Bar chart -->
+                <rect x="276" y="266" width="468" height="124" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+                <rect x="290" y="280" width="120" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+                <line x1="290" y1="378" x2="730" y2="378" stroke="rgba(255,255,255,0.1)"/>
+
+                <rect x="300" y="338" width="22" height="40" rx="3" fill="rgba(125,181,172,0.7)"/>
+                <rect x="332" y="318" width="22" height="60" rx="3" fill="rgba(125,181,172,0.85)"/>
+                <rect x="364" y="302" width="22" height="76" rx="3" fill="#7DB5AC"/>
+                <rect x="396" y="312" width="22" height="66" rx="3" fill="rgba(158,31,90,0.7)"/>
+                <rect x="428" y="294" width="22" height="84" rx="3" fill="#9E1F5A"/>
+                <rect x="460" y="318" width="22" height="60" rx="3" fill="rgba(158,31,90,0.6)"/>
+                <rect x="492" y="332" width="22" height="46" rx="3" fill="rgba(158,31,90,0.45)"/>
+                <rect x="524" y="324" width="22" height="54" rx="3" fill="rgba(125,181,172,0.55)"/>
+                <rect x="556" y="312" width="22" height="66" rx="3" fill="rgba(125,181,172,0.6)"/>
+                <rect x="588" y="320" width="22" height="58" rx="3" fill="rgba(125,181,172,0.5)"/>
+                <rect x="620" y="330" width="22" height="48" rx="3" fill="rgba(125,181,172,0.45)"/>
+                <rect x="652" y="338" width="22" height="40" rx="3" fill="rgba(125,181,172,0.4)"/>
+                <rect x="684" y="345" width="22" height="33" rx="3" fill="rgba(125,181,172,0.35)"/>
+              </svg>
+
+              <!-- Overlay escurecedor pro play se destacar -->
+              <div class="vsl-overlay"></div>
 
               <!-- Play button -->
               <button
                 type="button"
                 aria-label="Assistir vídeo de apresentação"
-                class="absolute inset-0 flex items-center justify-center cursor-pointer group">
+                class="absolute inset-0 flex items-center justify-center cursor-pointer group z-10">
                 <span class="play-button relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 backdrop-blur flex items-center justify-center shadow-2xl">
                   <svg class="w-7 h-7 lg:w-9 lg:h-9 text-wine ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -106,13 +198,13 @@
               </button>
 
               <!-- Caption -->
-              <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                <div class="flex items-center gap-2 text-white/90">
+              <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10">
+                <div class="flex items-center gap-2 text-white/95">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2" />
                   </svg>
-                  <span class="text-sm font-medium">Veja em 2 minutos como o Ergofly funciona</span>
+                  <span class="text-sm font-medium">Veja em 2 minutos como a Ergofly funciona</span>
                 </div>
               </div>
 
@@ -123,59 +215,70 @@
       </div>
     </div>
 
-    <!-- Credibility cards (clean) -->
+    <!-- Faixa de credibilidade — destaque +700 + 3 selos apoio -->
     <div class="relative z-10 pb-14 lg:pb-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
 
-          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-3">
-            <span class="cred-card-icon">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <!-- Label sutil acima -->
+        <p class="text-center text-xs uppercase tracking-[0.18em] text-muted/80 mb-6 fade-in-up fade-in-up-delay-3">
+          Confiam na metodologia
+        </p>
+
+        <div class="grid lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
+
+          <!-- Card hero: +700 empresas -->
+          <div class="cred-card-hero lg:col-span-5 fade-in-up fade-in-up-delay-3">
+            <div class="cred-card-hero-icon">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-2a4 4 0 100-8 4 4 0 000 8zM17 8a4 4 0 11-1.5 7.747" />
               </svg>
-            </span>
-            <div class="min-w-0">
-              <div class="text-base lg:text-lg font-bold text-ink leading-tight">+700</div>
-              <div class="text-xs lg:text-sm text-muted leading-tight">empresas atendidas</div>
+            </div>
+            <div class="cred-card-hero-content">
+              <div class="cred-card-hero-number">+700</div>
+              <div class="cred-card-hero-label">empresas já atendidas pela metodologia</div>
             </div>
           </div>
 
-          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-3">
-            <span class="cred-card-icon">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
-            <div class="min-w-0">
-              <div class="text-base lg:text-lg font-bold text-ink leading-tight">Abergo</div>
-              <div class="text-xs lg:text-sm text-muted leading-tight">Associação Brasileira</div>
-            </div>
-          </div>
+          <!-- 3 selos de apoio -->
+          <div class="lg:col-span-7 grid grid-cols-3 gap-3 lg:gap-4">
 
-          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-4">
-            <span class="cred-card-icon">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              </svg>
-            </span>
-            <div class="min-w-0">
-              <div class="text-base lg:text-lg font-bold text-ink leading-tight">35 anos</div>
-              <div class="text-xs lg:text-sm text-muted leading-tight">PhD em ergonomia</div>
+            <div class="cred-mini fade-in-up fade-in-up-delay-3">
+              <div class="cred-mini-icon">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="cred-mini-text">
+                <div class="cred-mini-title">Reconhecido</div>
+                <div class="cred-mini-sub">Abergo</div>
+              </div>
             </div>
-          </div>
 
-          <div class="cred-card flex items-center gap-3 fade-in-up fade-in-up-delay-4">
-            <span class="cred-card-icon">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </span>
-            <div class="min-w-0">
-              <div class="text-base lg:text-lg font-bold text-ink leading-tight">NR-1 / NR-17</div>
-              <div class="text-xs lg:text-sm text-muted leading-tight">Conformidade total</div>
+            <div class="cred-mini fade-in-up fade-in-up-delay-4">
+              <div class="cred-mini-icon">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+              </div>
+              <div class="cred-mini-text">
+                <div class="cred-mini-title">35 anos</div>
+                <div class="cred-mini-sub">PhD em ergonomia</div>
+              </div>
             </div>
-          </div>
 
+            <div class="cred-mini fade-in-up fade-in-up-delay-4">
+              <div class="cred-mini-icon">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div class="cred-mini-text">
+                <div class="cred-mini-title">NR-1 / NR-17</div>
+                <div class="cred-mini-sub">Conformidade total</div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -183,68 +286,85 @@
   </section>
 
   <!-- ============================================
-       2. NÚMEROS — light clean
+       2. NÚMEROS — dark com glow animado
        ============================================ -->
-  <section id="numeros" class="section-bg py-20 lg:py-28">
+  <section id="numeros" class="dark-section py-24 lg:py-28">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Divider TOP — curva sutil mesma direção da base -->
+    <svg class="dark-section-divider dark-section-divider-top" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 L1440,0 L1440,40 C960,8 480,8 0,40 Z" fill="#FFFFFF"/>
+    </svg>
+
+    <!-- Glow animado de fundo -->
+    <div class="dark-section-glow" aria-hidden="true">
+      <div class="dark-glow-blob dark-glow-blob-1"></div>
+      <div class="dark-glow-blob dark-glow-blob-2"></div>
+      <div class="dark-glow-blob dark-glow-blob-3"></div>
+    </div>
+
+    <!-- Divider BOTTOM — curva sutil mesma direção do topo (pico subindo no meio) -->
+    <svg class="dark-section-divider dark-section-divider-bottom" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 L1440,40 L1440,32 C960,0 480,0 0,32 Z" fill="#FFFFFF"/>
+    </svg>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
       <!-- Header da seção -->
       <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
-        <div class="section-badge scroll-reveal">
+        <div class="section-badge section-badge-dark scroll-reveal">
           <span class="dot"></span>
           <span>Resultados</span>
         </div>
-        <h2 class="section-title mt-5 scroll-reveal">
-          Por que o Ergofly funciona.
+        <h2 class="section-title section-title-dark mt-5 scroll-reveal">
+          Por que a Ergofly funciona.
         </h2>
-        <p class="section-subhead mt-4 scroll-reveal scroll-reveal-delay-1">
+        <p class="section-subhead section-subhead-dark mt-4 scroll-reveal scroll-reveal-delay-1">
           Cobertura, profundidade e tecnologia em cada análise.
         </p>
       </div>
 
-      <!-- Grid de 3 stat cards (light) -->
+      <!-- Grid de 3 stat cards (dark) -->
       <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
 
         <!-- Card 1 — 66% (rotatividade) -->
-        <div class="stat-card-light scroll-reveal scroll-reveal-delay-1">
-          <span class="stat-card-icon" aria-hidden="true">
+        <div class="dark-card scroll-reveal scroll-reveal-delay-1">
+          <span class="dark-card-icon" aria-hidden="true">
             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
               <path fill="currentColor" d="M312.891,474.531c-53.614,14.02-110.427,7.746-159.971-17.673c-49.891-25.596-88.282-68.611-108.101-121.119c-18.354-48.63-19.542-100.392-3.436-149.692c11.942-36.555,33.142-69.509,60.999-95.462l-5.138,42.64l29.938,3.609l11.327-93.99l-92.81-10.973l-3.541,29.946l41.602,4.92c-32.521,29.685-57.238,67.702-71.039,109.947c-8.855,27.105-13.104,55.244-12.628,83.637c0.493,29.38,6.049,58.337,16.516,86.069c22.465,59.521,65.987,108.283,122.548,137.3c36.557,18.754,76.608,28.312,116.888,28.312c21.594,0,43.257-2.748,64.477-8.298L312.891,474.531z" />
               <path fill="currentColor" d="M496.473,343.458c20.968-57.4,20.612-120.547-1-177.808C472.07,103.642,426.264,53.749,366.492,25.161C306.911-3.335,239.593-7.787,176.937,12.627l9.342,28.671c55.258-18.004,114.637-14.073,167.201,11.067c52.727,25.218,93.134,69.231,113.78,123.934c19.062,50.506,19.377,106.197,0.888,156.814c-14.621,40.026-40.207,74.946-73.408,100.816l5.589-46.375l-29.938-3.609l-11.328,93.99l92.809,10.974l3.541-29.946l-38.058-4.501C453.006,425.489,480.51,387.157,496.473,343.458z" />
               <path fill="currentColor" d="M390.318,293.388c0-38.407-24.113-71.284-57.994-84.3c8.693-10.919,13.906-24.726,13.906-39.735c0-35.245-28.674-63.918-63.919-63.918c-32.365,0-59.171,24.185-63.338,55.428c-31.243,4.167-55.428,30.973-55.428,63.338c0,15.228,5.362,29.223,14.284,40.215c-33.232,13.332-56.763,45.877-56.763,83.819v15.077h213.026v-15.077c0-14.24-3.319-27.717-9.216-39.707l65.442-0.083V293.388z M282.312,135.59c18.617,0,33.764,15.146,33.764,33.763c0,16.801-12.337,30.772-28.427,33.338c-6.441-17.967-20.707-32.233-38.675-38.674C251.54,147.927,265.511,135.59,282.312,135.59z M227.465,190.438c18.617,0,33.764,15.147,33.764,33.764c0,18.618-15.147,33.764-33.764,33.764c-18.618,0-33.764-15.147-33.764-33.764C193.7,205.585,208.847,190.438,227.465,190.438z M153.135,333.159c6.708-25.874,30.259-45.038,58.202-45.038h32.485c27.942,0,51.493,19.164,58.202,45.038H153.135z M300.961,278.405c-7.114-5.832-15.131-10.599-23.806-14.059c7.087-8.756,11.909-19.411,13.574-31.073h9.32c27.95,0,51.507,19.174,58.207,45.059L300.961,278.405z" />
             </svg>
           </span>
-          <div class="stat-number-light">66%</div>
-          <p class="stat-card-text">
+          <div class="dark-number">66%</div>
+          <p class="dark-card-text">
             da rotatividade vem de
             <strong>causas ergonômicas</strong>
           </p>
         </div>
 
-        <!-- Card 2 — 100% (sem amostragem) -->
-        <div class="stat-card-light scroll-reveal scroll-reveal-delay-2">
-          <span class="stat-card-icon" aria-hidden="true">
+        <!-- Card 2 — 100% (sem amostragem) — FEATURED com glow -->
+        <div class="dark-card dark-card-featured scroll-reveal scroll-reveal-delay-2">
+          <span class="dark-card-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
               <path fill="currentColor" d="m11 59.12c4.63 3.3 12.84 4.8 20.91 4.8a52.17 52.17 0 0 0 15.66-2.18h.62a13.57 13.57 0 0 0 8.13-2.7l4.29 4.29a2 2 0 0 0 2.83-2.83l-4.29-4.29a13.63 13.63 0 0 0 -9.87-21.71 24.79 24.79 0 0 0 -7.85-5.13 16.19 16.19 0 1 0 -18.86 0 24.92 24.92 0 0 0 -15.5 23.07c0 1.78.68 4.39 3.93 6.68zm46.86-11a9.68 9.68 0 0 1 -9.67 9.66h-.72-.07a9.66 9.66 0 1 1 10.46-9.62zm-38-31.86a12.19 12.19 0 1 1 12.14 12.17 12.21 12.21 0 0 1 -12.19-12.18zm8.14 15.65a16.17 16.17 0 0 0 4 .52 15.79 15.79 0 0 0 4-.53 20.84 20.84 0 0 1 7.77 3.27 13.65 13.65 0 0 0 -3.39 24.17c-9.82 1.54-21.94.2-27.11-3.48-1.5-1.06-2.23-2.18-2.23-3.42a20.9 20.9 0 0 1 16.96-20.53z" />
             </svg>
           </span>
-          <div class="stat-number-light">100%</div>
-          <p class="stat-card-text">
+          <div class="dark-number">100%</div>
+          <p class="dark-card-text">
             dos seus colaboradores analisados,
             <strong>sem amostragem</strong>
           </p>
         </div>
 
         <!-- Card 3 — 5 (agentes IA) -->
-        <div class="stat-card-light scroll-reveal scroll-reveal-delay-3">
-          <span class="stat-card-icon" aria-hidden="true">
+        <div class="dark-card scroll-reveal scroll-reveal-delay-3">
+          <span class="dark-card-icon" aria-hidden="true">
             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
               <path fill="currentColor" d="m421 279.881h-53v43.119h119.593c15.459-18.357 24.407-41.896 24.407-67 0-37.184-19.608-70.951-50.974-89.497 3.684-14.831 2.284-30.568-4.236-44.847-6.972-15.266-19.055-27.199-34.021-33.934-1.521-21.881-10.502-42.31-25.884-58.443-18.002-18.881-42.288-29.279-68.385-29.279-20.75 0-40.473 6.846-56.5 18.793v99.207h47v-21c0-8.284 6.716-15 15-15s15 6.716 15 15v21h3c8.284 0 15 6.716 15 15s-6.716 15-15 15h-80c-16.542 0-30-13.458-30-30v-97.675c-16.371-12.893-36.878-20.325-58.5-20.325-26.097 0-50.383 10.398-68.385 29.28-15.382 16.133-24.363 36.561-25.884 58.443-14.967 6.735-27.05 18.668-34.021 33.934-5.158 11.295-7.098 23.501-5.866 35.45h97.657v-40.107c0-8.284 6.716-15 15-15s15 6.716 15 15v40.106h8.999c16.542 0 30 13.458 30 30v16h14.617c8.284 0 15 6.716 15 15s-6.716 15-15 15h-14.617v27c0 8.284-6.716 15-15 15s-15-6.716-15-15v-73h-56.001v45c0 8.284-6.716 15-15 15s-15-6.716-15-15v-45s-73.249-.049-73.849-.122c-16.528 18.633-26.15 42.983-26.15 69.016 0 37.184 19.608 70.951 50.974 89.497-3.684 14.831-2.284 30.568 4.236 44.847 1.395 3.055 3.004 5.97 4.791 8.743h95.999v-67.087h-26c-8.284 0-15-6.716-15-15s6.716-15 15-15h26c16.542 0 30 13.458 30 30v18.544h13c8.284 0 15 6.716 15 15s-6.716 15-15 15h-13v18.543c0 16.542-13.458 30-30 30h-66.299c2.422 20.056 11.166 38.689 25.414 53.633 18.002 18.882 42.288 29.28 68.385 29.28 21.182 0 41.298-7.129 57.5-19.542v-77.458c0-16.542 13.458-30 30-30h27c8.284 0 15 6.716 15 15s-6.716 15-15 15h-27v77.458c16.202 12.413 36.318 19.542 57.5 19.542 26.097 0 50.383-10.398 68.385-29.28 15.382-16.133 24.363-36.562 25.884-58.443 14.967-6.735 27.05-18.668 34.021-33.934 5.431-11.892 7.296-24.795 5.644-37.344h-191.438c-16.542 0-30-13.458-30-30v-26.999c0-8.284 6.716-15 15-15s15 6.716 15 15v27h67.004v-99.118h-30c-8.284 0-15-6.716-15-15s6.716-15 15-15h30c16.542 0 30 13.458 30 30v26h37.999v-28.882c0-8.284 6.716-15 15-15s15 6.716 15 15c0 0 .001 42.695.001 43.881 0 8.285-6.716 15-15 15z" />
             </svg>
           </span>
-          <div class="stat-number-light">5</div>
-          <p class="stat-card-text">
+          <div class="dark-number">5</div>
+          <p class="dark-card-text">
             <strong>agentes de IA</strong>
             especialistas em cada laudo
           </p>
@@ -257,7 +377,7 @@
   <!-- ============================================
        3. COMO FUNCIONA — CARDS COM MOCKUP
        ============================================ -->
-  <section id="como-funciona" class="section-bg-soft py-20 lg:py-28">
+  <section id="como-funciona" class="section-bg-soft py-24 lg:py-28">
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -461,7 +581,7 @@
       <!-- CTA secundário -->
       <div class="mt-14 flex justify-center scroll-reveal scroll-reveal-delay-4">
         <a href="#cta-final" data-cta="como-funciona-secondary" class="btn-primary group">
-          Quero ver o Ergofly
+          Quero ver a Ergofly
           <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
@@ -474,7 +594,7 @@
   <!-- ============================================
        3.5. FAQ
        ============================================ -->
-  <section id="faq" class="section-bg py-20 lg:py-28">
+  <section id="faq" class="section-bg-tint py-24 lg:py-28">
 
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
 
@@ -494,14 +614,14 @@
 
         <div class="faq-item scroll-reveal scroll-reveal-delay-1" data-open="false">
           <button class="faq-trigger" type="button" aria-expanded="false">
-            <span>O que é o Ergofly?</span>
+            <span>O que é a Ergofly?</span>
             <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content">
             <div class="faq-content-inner">
-              O Ergofly é um <strong>sistema completo de IA em ergonomia</strong> da Doutor Fly. Ele analisa 100% dos seus colaboradores, identifica riscos ergonômicos e entrega laudos e planos de ação em conformidade com a NR-1 e a NR-17.
+              A Ergofly é uma <strong>plataforma completa de IA em ergonomia</strong> da Doutor Fly. Ela analisa 100% dos seus colaboradores, identifica riscos ergonômicos e entrega laudos e planos de ação em conformidade com a NR-1 e a NR-17.
             </div>
           </div>
         </div>
@@ -529,7 +649,7 @@
           </button>
           <div class="faq-content">
             <div class="faq-content-inner">
-              Não. O Ergofly foi desenhado para o <strong>gestor de RH ou SST sem experiência prévia</strong> em ergonomia. A IA traduz os dados em plano de ação claro, e a documentação jurídica fica pronta automaticamente.
+              Não. A Ergofly foi desenhada para o <strong>gestor de RH ou SST sem experiência prévia</strong> em ergonomia. A IA traduz os dados em plano de ação claro, e a documentação jurídica fica pronta automaticamente.
             </div>
           </div>
         </div>
@@ -543,21 +663,21 @@
           </button>
           <div class="faq-content">
             <div class="faq-content-inner">
-              O Ergofly entrega <strong>laudos AEP e AET</strong>, plano de ação priorizado por risco e documentação jurídica completa em conformidade com a NR-1 e a NR-17.
+              A Ergofly entrega <strong>laudos AEP e AET</strong>, plano de ação priorizado por risco e documentação jurídica completa em conformidade com a NR-1 e a NR-17.
             </div>
           </div>
         </div>
 
         <div class="faq-item scroll-reveal scroll-reveal-delay-3" data-open="false">
           <button class="faq-trigger" type="button" aria-expanded="false">
-            <span>Quem está por trás do Ergofly?</span>
+            <span>Quem está por trás da Ergofly?</span>
             <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content">
             <div class="faq-content-inner">
-              O Ergofly é um produto da <strong>Doutor Fly</strong>, criado por um PhD com 35 anos de experiência em ergonomia. A metodologia é <strong>reconhecida pela Abergo</strong> (Associação Brasileira de Ergonomia) e já foi aplicada em mais de 700 empresas.
+              A Ergofly é uma plataforma da <strong>Doutor Fly</strong>, criada por um PhD com 35 anos de experiência em ergonomia. A metodologia é <strong>reconhecida pela Abergo</strong> (Associação Brasileira de Ergonomia) e já foi aplicada em mais de 700 empresas.
             </div>
           </div>
         </div>
@@ -584,41 +704,76 @@
   <!-- ============================================
        4. CTA FINAL
        ============================================ -->
-  <section id="cta-final" class="section-bg py-20 lg:py-28">
+  <section id="cta-final" class="section-bg py-24 lg:py-28">
 
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
 
-      <div class="cta-final-card scroll-reveal">
+      <div class="cta-final-card cta-final-card-premium scroll-reveal">
 
-        <div class="section-badge">
-          <span class="dot"></span>
-          <span>Próximo passo</span>
+        <!-- Glow blobs decorativos -->
+        <div class="cta-final-glow" aria-hidden="true">
+          <div class="cta-final-glow-wine"></div>
+          <div class="cta-final-glow-sage"></div>
         </div>
 
-        <h2 class="section-title mt-5">
-          Pronto pra ver o Ergofly na sua empresa?
-        </h2>
+        <div class="relative z-10">
 
-        <p class="section-subhead mt-5 max-w-xl mx-auto">
-          Agende uma demonstração focada no seu caso. Nosso time entra em contato em até 24h.
-        </p>
-
-        <div class="mt-9 flex justify-center">
-          <a href="#" data-cta="final" class="btn-primary group">
-            Quero ver o Ergofly
-            <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          <!-- Pill garantia -->
+          <div class="cta-guarantee-pill">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-          </a>
-        </div>
+            <span>Resposta em até 24h</span>
+          </div>
 
-        <p class="mt-7 text-sm text-muted">
-          <span class="font-semibold text-ink">+700 empresas</span>
-          <span class="mx-2 opacity-40">·</span>
-          <span class="font-semibold text-ink">Reconhecido pela Abergo</span>
-          <span class="mx-2 opacity-40">·</span>
-          <span class="font-semibold text-ink">NR-1 e NR-17</span>
-        </p>
+          <h2 class="section-title mt-5">
+            Pronto pra ver a Ergofly na sua empresa?
+          </h2>
+
+          <p class="section-subhead mt-5 max-w-xl mx-auto">
+            Agende uma demonstração focada no seu caso. Nosso time analisa seu cenário e mostra como a Ergofly se encaixa.
+          </p>
+
+          <div class="mt-9 flex justify-center">
+            <a href="#" data-cta="final" class="btn-primary btn-primary-lg group">
+              Quero ver a Ergofly na minha empresa
+              <svg class="arrow w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Sub-line: sem cartão -->
+          <p class="mt-5 text-sm text-muted flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-sage-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Conversa sem compromisso. Sem cartão de crédito.
+          </p>
+
+          <!-- Selos -->
+          <div class="cta-final-seals">
+            <div class="cta-final-seal">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-2a4 4 0 100-8 4 4 0 000 8z" />
+              </svg>
+              <span>+700 empresas</span>
+            </div>
+            <div class="cta-final-seal">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Reconhecido pela Abergo</span>
+            </div>
+            <div class="cta-final-seal">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span>NR-1 e NR-17</span>
+            </div>
+          </div>
+
+        </div>
 
       </div>
 
@@ -629,29 +784,35 @@
        5. FOOTER
        ============================================ -->
   <footer id="footer" class="site-footer">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-14">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-12">
 
-      <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-start">
 
-        <div>
-          <img src="assets/logo-doutor-fly.png" alt="Doutor Fly" class="h-10 w-auto" />
+        <!-- Logo -->
+        <div class="flex justify-center md:justify-start">
+          <img src="assets/logo-doutor-fly.png" alt="Doutor Fly" class="h-9 w-auto opacity-90" />
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm">
-          <a href="#" class="footer-link">Política de Privacidade</a>
+        <!-- Onde estamos -->
+        <div class="text-center text-sm text-muted leading-relaxed">
+          <p class="font-semibold text-ink mb-1">Onde estamos</p>
+          <p>Rua Raul Machado, 109 — Centro</p>
+          <p>Florianópolis</p>
+          <p>
+            <a href="tel:+554832237971" class="footer-link">(48) 3223.7971</a>
+          </p>
+        </div>
+
+        <!-- Links + contato -->
+        <div class="flex flex-col items-center md:items-end gap-2 text-sm">
           <a href="mailto:contato@doutorfly.com.br" class="footer-link">contato@doutorfly.com.br</a>
+          <a href="#" class="footer-link">Política de Privacidade</a>
         </div>
 
       </div>
 
-      <div class="mt-10 pt-8 border-t border-gray-200/60 text-center lg:text-left">
-        <p class="text-xs text-muted">
-          Doutor Fly
-          <span class="mx-1 opacity-40">·</span>
-          CNPJ XX.XXX.XXX/0001-XX
-          <span class="mx-1 opacity-40">·</span>
-          © 2026 Todos os direitos reservados
-        </p>
+      <div class="mt-8 pt-6 border-t border-gray-200/60 text-center">
+        <p class="text-xs text-muted">© 2026 Doutor Fly</p>
       </div>
 
     </div>
