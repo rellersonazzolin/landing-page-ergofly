@@ -20,8 +20,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScrollReveal();
   initFaqAccordion();
-  initScrollDarkenVeil();
+  initStatCounter();
 });
+
+/* ============================================
+   Stat counter — anima de 0 até o valor de data-counter-to
+   quando o elemento entra na viewport. Ease-out cubic, ~2.2s.
+   ============================================ */
+
+function initStatCounter() {
+  const numbers = document.querySelectorAll('[data-counter-to]');
+  if (numbers.length === 0) return;
+
+  const DURATION = 2200; // ms (dentro dos 4s pedidos)
+
+  function animate(el) {
+    const target = parseFloat(el.dataset.counterTo);
+    const suffix = el.dataset.counterSuffix || '';
+    const delay = parseInt(el.dataset.counterDelay, 10) || 0;
+    if (Number.isNaN(target)) return;
+
+    function run() {
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const t = Math.min(1, elapsed / DURATION);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    if (delay > 0) {
+      setTimeout(run, delay);
+    } else {
+      run();
+    }
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    numbers.forEach(animate);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  numbers.forEach((el) => observer.observe(el));
+}
 
 /* ============================================
    Scroll Darken Veil
